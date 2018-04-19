@@ -1,0 +1,7 @@
+flask_sqlalchemy
+requests
+flask
+PyTelegramBotAPI
+redis
+pyowm
+psycopg2
