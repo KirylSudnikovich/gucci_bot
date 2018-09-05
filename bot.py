@@ -184,7 +184,7 @@ def getSchedule(message):
         sTemp2 = str(numGroup)
         sTemp3 = sTemp1 + sTemp2
         r = requests.get(sTemp3)
-        msg = bot.send_message(message.chat.id, r)
+        # msg = bot.send_message(message.chat.id, r)
         bsche = r.json()
         msg = bot.send_message(message.chat.id, bsche)
         bschedule = bsche["todaySchedules"]
