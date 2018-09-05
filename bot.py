@@ -186,7 +186,7 @@ def getSchedule(message):
         r = requests.get(sTemp3)
         # msg = bot.send_message(message.chat.id, r)
         bsche = r.json()
-        msg = bot.send_message(message.chat.id, bsche)
+        # msg = bot.send_message(message.chat.id, bsche)
         bschedule = bsche["todaySchedules"]
         if not bschedule:
             bot.send_message(message.chat.id, 'Сегодня нет занятий. Just chill, homie.')
@@ -194,6 +194,7 @@ def getSchedule(message):
             for i in bschedule:
                 if i['subject'] != "ФизК" and i['subject'] != "ИКГ":
                     emp = i["employee"][0]
+                s += str(i['lesson_type']) + '\n'
                 s += u'\U0001F4D6' + str(i['subject']) + '\n'
                 s += u'\U000023F3' + str(i['lessonTime']) + '\n'
                 if i['subject'] != "ФизК":
