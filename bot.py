@@ -200,7 +200,8 @@ def getSchedule(message):
                         s += u'\U0001F38E' + str(i['numSubgroup']) + ' подгруппа ' + '\n'
                 if i['subject'] != "ФизК" and i['subject'] != "ИКГ":
                     s += u'\U0001F47D' + str(emp['lastName']) + ' ' + str(emp['firstName']) + ' ' + str(
-                        emp['middleName']) + '\n\n'
+                        emp['middleName']) + '\n'
+                s += '\n'
         bot.send_message(message.chat.id, s)
         markup = types.ReplyKeyboardMarkup(one_time_keyboard=True, resize_keyboard=True, row_width=2)
         markup.add(*[types.KeyboardButton(name) for name in ['Завтра', 'Назад']])
