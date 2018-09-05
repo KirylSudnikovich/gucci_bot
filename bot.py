@@ -189,8 +189,8 @@ def getSchedule(message):
         if not bschedule:
             bot.send_message(message.chat.id, 'Сегодня нет занятий. Just chill, homie.')
         else:
+            print(bschedule)
             for i in bschedule:
-                print(i)
                 if i['subject'] != "ФизК" and i['subject'] != "ИКГ":
                     emp = i["employee"][0]
                 s += u'\U0001F4D6' + str(i['subject']) + '\n'
