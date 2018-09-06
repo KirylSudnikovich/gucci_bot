@@ -15,20 +15,22 @@
     <session id="1254587900">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.open.time.1" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.closed" value="2" />
+          <entry key="project.open.time.1" value="2" />
+          <entry key="project.open.time.10" value="1" />
+          <entry key="project.opened" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="139" />
+          <entry key="py" value="198" />
           <entry key="txt" value="58" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="58" />
-          <entry key="Python" value="139" />
+          <entry key="Python" value="198" />
         </counts>
       </usages-collector>
     </session>
@@ -38,8 +40,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bot.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="602">
-              <caret line="196" column="48" selection-start-line="196" selection-start-column="48" selection-end-line="196" selection-end-column="48" />
+            <state relative-caret-position="722">
+              <caret line="213" column="52" selection-start-line="213" selection-start-column="52" selection-end-line="213" selection-end-column="52" />
               <folding>
                 <element signature="e#15#29#0" expanded="true" />
               </folding>
@@ -91,9 +93,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="219" />
-    <option name="width" value="1356" />
-    <option name="height" value="382" />
+    <option name="x" value="1366" />
+    <option name="y" value="-1" />
+    <option name="width" value="1920" />
+    <option name="height" value="1053" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -238,18 +241,30 @@
       <option name="project" value="LOCAL" />
       <updated>1536137885509</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="1more fix">
+      <created>1536138008435</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1536138008435</updated>
+    </task>
+    <task id="LOCAL-00010" summary="1more fix">
+      <created>1536138116956</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1536138116956</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="-1" width="1920" height="1053" extended-state="6" />
+    <frame x="1366" y="-1" width="1920" height="1053" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.11686233" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1189968" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -261,12 +276,14 @@
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.32930845" />
       <window_info anchor="bottom" id="Python Console" order="10" />
-      <window_info anchor="right" id="Database" />
-      <window_info anchor="right" id="SciView" />
+      <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Data View" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="right" id="SciView" order="5" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -286,8 +303,8 @@
     <entry file="file://$PROJECT_DIR$/utils.py" />
     <entry file="file://$PROJECT_DIR$/bot.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="602">
-          <caret line="196" column="48" selection-start-line="196" selection-start-column="48" selection-end-line="196" selection-end-column="48" />
+        <state relative-caret-position="722">
+          <caret line="213" column="52" selection-start-line="213" selection-start-column="52" selection-end-line="213" selection-end-column="52" />
           <folding>
             <element signature="e#15#29#0" expanded="true" />
           </folding>

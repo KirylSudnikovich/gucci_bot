@@ -179,38 +179,39 @@ def getSchedule(message):
     s = ""
     ourUser = db.session.query(User).filter_by(username=str(message.from_user.first_name)).first()
     if ourUser:
-        numGroup = ourUser.group
-        sTemp1 = 'https://students.bsuir.by/api/v1/studentGroup/schedule?studentGroup='
-        sTemp2 = str(numGroup)
-        sTemp3 = sTemp1 + sTemp2
-        r = requests.get(sTemp3)
-        # msg = bot.send_message(message.chat.id, r)
-        bsche = r.json()
-        # msg = bot.send_message(message.chat.id, bsche)
-        bschedule = bsche["todaySchedules"]
-        if not bschedule:
-            bot.send_message(message.chat.id, 'Сегодня нет занятий. Just chill, homie.')
-        else:
-            for i in bschedule:
-                if i['subject'] != "ФизК" and i['subject'] != "ИКГ":
-                    emp = i["employee"][0]
-                s += str(i['lessonType']) + '\n'
-                s += u'\U0001F4D6' + str(i['subject']) + '\n'
-                s += u'\U000023F3' + str(i['lessonTime']) + '\n'
-                if i['subject'] != "ФизК":
-                    s += u'\U0001F3E2' + str(i['auditory'][0]) + '\n'
-                    if int(i['numSubgroup']) != 0:
-                        s += u'\U0001F38E' + str(i['numSubgroup']) + ' подгруппа ' + '\n'
-                if i['subject'] != "ФизК" and i['subject'] != "ИКГ":
-                    s += u'\U0001F47D' + str(emp['lastName']) + ' ' + str(emp['firstName']) + ' ' + str(
-                        emp['middleName']) + '\n'
-                s += '\n'
-        bot.send_message(message.chat.id, s)
-        markup = types.ReplyKeyboardMarkup(one_time_keyboard=True, resize_keyboard=True, row_width=2)
-        markup.add(*[types.KeyboardButton(name) for name in ['Завтра', 'Назад']])
-        msg = bot.send_message(message.chat.id, 'Что делаем дальше?',
-                               reply_markup=markup)
-        bot.register_next_step_handler(msg, Tomorrow)
+        try:
+            numGroup = ourUser.group
+            sTemp1 = 'https://students.bsuir.by/api/v1/studentGroup/schedule?studentGroup='
+            sTemp2 = str(numGroup)
+            sTemp3 = sTemp1 + sTemp2
+            r = requests.get(sTemp3)
+            bsche = r.json()
+            bschedule = bsche["todaySchedules"]
+            if not bschedule:
+                bot.send_message(message.chat.id, 'Сегодня нет занятий. Just chill, homie.')
+            else:
+                for i in bschedule:
+                    if i['subject'] != "ФизК" and i['subject'] != "ИКГ":
+                        emp = i["employee"][0]
+                    s += str(i['lessonType']) + '\n'
+                    s += u'\U0001F4D6' + str(i['subject']) + '\n'
+                    s += u'\U000023F3' + str(i['lessonTime']) + '\n'
+                    if i['subject'] != "ФизК":
+                        s += u'\U0001F3E2' + str(i['auditory'][0]) + '\n'
+                        if int(i['numSubgroup']) != 0:
+                            s += u'\U0001F38E' + str(i['numSubgroup']) + ' подгруппа ' + '\n'
+                    if i['subject'] != "ФизК" and i['subject'] != "ИКГ":
+                        s += u'\U0001F47D' + str(emp['lastName']) + ' ' + str(emp['firstName']) + ' ' + str(
+                            emp['middleName']) + '\n'
+                    s += '\n'
+            bot.send_message(message.chat.id, s)
+            markup = types.ReplyKeyboardMarkup(one_time_keyboard=True, resize_keyboard=True, row_width=2)
+            markup.add(*[types.KeyboardButton(name) for name in ['Завтра', 'Назад']])
+            msg = bot.send_message(message.chat.id, 'Что делаем дальше?',
+                                   reply_markup=markup)
+            bot.register_next_step_handler(msg, Tomorrow)
+        except Exception as error:
+            bot.send_message(message.chat.id, error)
     else:
         bot.send_message(message.chat.id, 'Вы не зарегистрированы. Сперва пройдите регистрацию по команде /start')
 
