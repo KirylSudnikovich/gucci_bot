@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1806e7be-5c4b-48ff-bc86-f7ce5694dc5d" name="Default" comment="1more fix">
+    <list default="true" id="1806e7be-5c4b-48ff-bc86-f7ce5694dc5d" name="Default" comment="[chore] cleanup and try/except">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/bot.py" afterDir="false" />
     </list>
@@ -15,22 +15,23 @@
     <session id="1254587900">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
-          <entry key="project.open.time.1" value="2" />
+          <entry key="project.closed" value="4" />
+          <entry key="project.open.time.1" value="3" />
           <entry key="project.open.time.10" value="1" />
-          <entry key="project.opened" value="3" />
+          <entry key="project.open.time.62" value="1" />
+          <entry key="project.opened" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="198" />
-          <entry key="txt" value="58" />
+          <entry key="py" value="200" />
+          <entry key="txt" value="111" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="58" />
-          <entry key="Python" value="198" />
+          <entry key="PLAIN_TEXT" value="111" />
+          <entry key="Python" value="200" />
         </counts>
       </usages-collector>
     </session>
@@ -40,8 +41,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bot.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="722">
-              <caret line="213" column="52" selection-start-line="213" selection-start-column="52" selection-end-line="213" selection-end-column="52" />
+            <state relative-caret-position="77">
+              <caret line="218" selection-start-line="218" selection-start-column="2" selection-end-line="247" selection-end-column="110" />
               <folding>
                 <element signature="e#15#29#0" expanded="true" />
               </folding>
@@ -93,7 +94,6 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1366" />
     <option name="y" value="-1" />
     <option name="width" value="1920" />
     <option name="height" value="1053" />
@@ -255,14 +255,21 @@
       <option name="project" value="LOCAL" />
       <updated>1536138116956</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="[chore] cleanup and try/except">
+      <created>1536261256634</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1536261256634</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1366" y="-1" width="1920" height="1053" extended-state="6" />
+    <frame x="0" y="-1" width="1920" height="1053" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1189968" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12113127" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -297,14 +304,15 @@
     <MESSAGE value="commit for show json" />
     <MESSAGE value="fix debug msg" />
     <MESSAGE value="1more fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="1more fix" />
+    <MESSAGE value="[chore] cleanup and try/except" />
+    <option name="LAST_COMMIT_MESSAGE" value="[chore] cleanup and try/except" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/utils.py" />
     <entry file="file://$PROJECT_DIR$/bot.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="722">
-          <caret line="213" column="52" selection-start-line="213" selection-start-column="52" selection-end-line="213" selection-end-column="52" />
+        <state relative-caret-position="77">
+          <caret line="218" selection-start-line="218" selection-start-column="2" selection-end-line="247" selection-end-column="110" />
           <folding>
             <element signature="e#15#29#0" expanded="true" />
           </folding>
