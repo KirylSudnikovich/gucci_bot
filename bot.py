@@ -175,7 +175,7 @@ def GetExams(message):
 
 
 @bot.message_handler(commands=['bsuir'])
-def getSchedule(message, tp="todaySchedules"):
+def getSchedule(message):
     s = ""
     ourUser = db.session.query(User).filter_by(username=str(message.from_user.first_name)).first()
     if ourUser:
@@ -186,7 +186,9 @@ def getSchedule(message, tp="todaySchedules"):
             sTemp3 = sTemp1 + sTemp2
             r = requests.get(sTemp3)
             bsche = r.json()
-            bschedule = bsche[tp]
+            bschedule = bsche["todaySchedules"]
+            if message.text == "Завтра":
+                bschedule = bsche["tomorrowSchedules"]
             if not bschedule:
                 bot.send_message(message.chat.id, 'Сегодня нет занятий. Just chill, homie.')
             else:
@@ -209,7 +211,7 @@ def getSchedule(message, tp="todaySchedules"):
             markup.add(*[types.KeyboardButton(name) for name in ['Завтра', 'Назад']])
             msg = bot.send_message(message.chat.id, 'Что делаем дальше?',
                                    reply_markup=markup)
-            bot.register_next_step_handler(msg, getSchedule('', 'tomorrowSchedules'))
+            bot.register_next_step_handler(msg, getSchedule)
         except Exception as error:
             bot.send_message(message.chat.id, error)
     else:
@@ -286,7 +288,7 @@ def checkRasp(message):
 
 def name1(message):
     if message.text != 'Академическая (в сторону Ангарской)' and message.text != 'Кольцевая дорога' and \
-            message.text != 'Профтехколледж' and message.text != 'Дом печати (в сторону ст.м. Пушкинская)':
+                    message.text != 'Профтехколледж' and message.text != 'Дом печати (в сторону ст.м. Пушкинская)':
         bot.send_message(message.chat.id, 'Ебать ты долбаеб, я не могу. Название нормально введи блять.',
                          reply_markup=types.ReplyKeyboardRemove())
         return
@@ -701,7 +703,6 @@ def NoCoolBot(message):
         if file == 'serega_evil.jpg':
             bot.send_photo(message.chat.id, "AgADAgADWqgxG0hVkEh--aRmsJVMlX3PDw4ABA7xVjUWQnZY9BYDAAEC", None)
     bot.send_message(message.chat.id, 'Are you ohuel tam?')
-
 
 @bot.message_handler(
     func=lambda msg: msg.text == 'бот, где можно провести каникулы?' or msg.text == 'Бот, где можно провести каникулы?')
