@@ -217,7 +217,7 @@ def getSchedule(message):
                                            reply_markup=markup)
                     bot.register_next_step_handler(msg, getSchedule)
                 else:
-                    bot.register_next_step_handler('Назад', getSchedule)
+                    bot.register_next_step_handler(message, getSchedule)
             except Exception as error:
                 bot.send_message(message.chat.id, error)
         else:
