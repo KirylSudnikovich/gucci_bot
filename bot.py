@@ -178,78 +178,50 @@ def GetExams(message):
 def getSchedule(message):
     if message.text == "Назад":
         bot.send_message(message.chat.id, 'Возвращаемся в главное меню', reply_markup=types.ReplyKeyboardRemove())
-    s = ""
-    ourUser = db.session.query(User).filter_by(username=str(message.from_user.first_name)).first()
-    if ourUser:
-        try:
-            numGroup = ourUser.group
-            sTemp1 = 'https://students.bsuir.by/api/v1/studentGroup/schedule?studentGroup='
-            sTemp2 = str(numGroup)
-            sTemp3 = sTemp1 + sTemp2
-            r = requests.get(sTemp3)
-            bsche = r.json()
-            bschedule = bsche["todaySchedules"]
-            if message.text == "Завтра":
-                bschedule = bsche["tomorrowSchedules"]
-            if not bschedule:
-                bot.send_message(message.chat.id, 'Сегодня нет занятий. Just chill, homie.')
-            else:
-                for i in bschedule:
-                    if i['subject'] != "ФизК" and i['subject'] != "ИКГ":
-                        emp = i["employee"][0]
-                    s += str(i['lessonType']) + '\n'
-                    s += u'\U0001F4D6' + str(i['subject']) + '\n'
-                    s += u'\U000023F3' + str(i['lessonTime']) + '\n'
-                    if i['subject'] != "ФизК":
-                        s += u'\U0001F3E2' + str(i['auditory'][0]) + '\n'
-                        if int(i['numSubgroup']) != 0:
-                            s += u'\U0001F38E' + str(i['numSubgroup']) + ' подгруппа ' + '\n'
-                    if i['subject'] != "ФизК" and i['subject'] != "ИКГ":
-                        s += u'\U0001F47D' + str(emp['lastName']) + ' ' + str(emp['firstName']) + ' ' + str(
-                            emp['middleName']) + '\n'
-                    s += '\n'
-            bot.send_message(message.chat.id, s)
-            markup = types.ReplyKeyboardMarkup(one_time_keyboard=True, resize_keyboard=True, row_width=2)
-            markup.add(*[types.KeyboardButton(name) for name in ['Завтра', 'Назад']])
-            msg = bot.send_message(message.chat.id, 'Что делаем дальше?',
-                                   reply_markup=markup)
-            bot.register_next_step_handler(msg, getSchedule)
-        except Exception as error:
-            bot.send_message(message.chat.id, error)
     else:
-        bot.send_message(message.chat.id, 'Вы не зарегистрированы. Сперва пройдите регистрацию по команде /start')
-
-
-# def Tomorrow(m):
-#     ourUser = db.session.query(User).filter_by(username=str(m.from_user.first_name)).first()
-#     group = ourUser.group
-#     if m.text == 'Завтра':
-#         s = ""
-#         sTemp1 = 'https://students.bsuir.by/api/v1/studentGroup/schedule?studentGroup='
-#         sTemp2 = str(group)
-#         sTemp3 = sTemp1 + sTemp2
-#         r = requests.get(sTemp3)
-#         bsche = r.json()
-#         bschedule = bsche["tomorrowSchedules"]
-#         if not bschedule:
-#             bot.send_message(m.chat.id, 'Завтра нет пар, будь спокоен, старик.',
-#                              reply_markup=types.ReplyKeyboardRemove())
-#         else:
-#             for i in bschedule:
-#                 if i['subject'] != "ФизК" and i['subject'] != "ИКГ":
-#                     emp = i["employee"][0]
-#                 s += u'\U0001F4D6' + str(i['subject']) + '\n'
-#                 s += u'\U000023F3' + str(i['lessonTime']) + '\n'
-#                 if i['subject'] != "ФизК":
-#                     s += u'\U0001F3E2' + str(i['auditory'][0]) + '\n'
-#                     if int(i['numSubgroup']) != 0:
-#                         s += u'\U0001F38E' + str(i['numSubgroup']) + ' подгруппа ' + '\n'
-#                 if i['subject'] != "ФизК" and i['subject'] != "ИКГ":
-#                     s += u'\U0001F47D' + str(emp['lastName']) + ' ' + str(emp['firstName']) + ' ' + str(
-#                         emp['middleName']) + '\n\n'
-#         bot.send_message(m.chat.id, s, reply_markup=types.ReplyKeyboardRemove())
-#     else:
-#         bot.send_message(m.chat.id, 'Возвращаемся в главное меню', reply_markup=types.ReplyKeyboardRemove())
+        s = ""
+        ourUser = db.session.query(User).filter_by(username=str(message.from_user.first_name)).first()
+        if ourUser:
+            try:
+                numGroup = ourUser.group
+                sTemp1 = 'https://students.bsuir.by/api/v1/studentGroup/schedule?studentGroup='
+                sTemp2 = str(numGroup)
+                sTemp3 = sTemp1 + sTemp2
+                r = requests.get(sTemp3)
+                bsche = r.json()
+                bschedule = bsche["todaySchedules"]
+                if message.text == "Завтра":
+                    bschedule = bsche["tomorrowSchedules"]
+                if not bschedule:
+                    bot.send_message(message.chat.id, 'Сегодня нет занятий. Just chill, homie.')
+                else:
+                    for i in bschedule:
+                        if i['subject'] != "ФизК" and i['subject'] != "ИКГ":
+                            emp = i["employee"][0]
+                        s += str(i['lessonType']) + '\n'
+                        s += u'\U0001F4D6' + str(i['subject']) + '\n'
+                        s += u'\U000023F3' + str(i['lessonTime']) + '\n'
+                        if i['subject'] != "ФизК":
+                            s += u'\U0001F3E2' + str(i['auditory'][0]) + '\n'
+                            if int(i['numSubgroup']) != 0:
+                                s += u'\U0001F38E' + str(i['numSubgroup']) + ' подгруппа ' + '\n'
+                        if i['subject'] != "ФизК" and i['subject'] != "ИКГ":
+                            s += u'\U0001F47D' + str(emp['lastName']) + ' ' + str(emp['firstName']) + ' ' + str(
+                                emp['middleName']) + '\n'
+                        s += '\n'
+                bot.send_message(message.chat.id, s)
+                if message.text != "Завтра":
+                    markup = types.ReplyKeyboardMarkup(one_time_keyboard=True, resize_keyboard=True, row_width=2)
+                    markup.add(*[types.KeyboardButton(name) for name in ['Завтра', 'Назад']])
+                    msg = bot.send_message(message.chat.id, 'Что делаем дальше?',
+                                           reply_markup=markup)
+                    bot.register_next_step_handler(msg, getSchedule)
+                else:
+                    bot.register_next_step_handler('Назад', getSchedule)
+            except Exception as error:
+                bot.send_message(message.chat.id, error)
+        else:
+            bot.send_message(message.chat.id, 'Вы не зарегистрированы. Сперва пройдите регистрацию по команде /start')
 
 
 @bot.message_handler(commands=['math'])

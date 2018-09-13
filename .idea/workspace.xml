@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1806e7be-5c4b-48ff-bc86-f7ce5694dc5d" name="Default" comment="[fix] todat/tomorrow schedule">
+    <list default="true" id="1806e7be-5c4b-48ff-bc86-f7ce5694dc5d" name="Default" comment="[fix] exit to main menu">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/bot.py" afterDir="false" />
     </list>
@@ -24,14 +24,14 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="294" />
-          <entry key="txt" value="174" />
+          <entry key="py" value="374" />
+          <entry key="txt" value="229" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="174" />
-          <entry key="Python" value="294" />
+          <entry key="PLAIN_TEXT" value="229" />
+          <entry key="Python" value="374" />
         </counts>
       </usages-collector>
     </session>
@@ -41,8 +41,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bot.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="190" column="52" selection-start-line="190" selection-start-column="52" selection-end-line="190" selection-end-column="52" />
+            <state relative-caret-position="450">
+              <caret line="219" column="57" selection-start-line="219" selection-start-column="57" selection-end-line="219" selection-end-column="57" />
               <folding>
                 <element signature="e#15#29#0" expanded="true" />
               </folding>
@@ -277,7 +277,21 @@
       <option name="project" value="LOCAL" />
       <updated>1536653134007</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="[fix] fix message condition in /bsuir">
+      <created>1536740255203</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1536740255203</updated>
+    </task>
+    <task id="LOCAL-00015" summary="[fix] exit to main menu">
+      <created>1536827099784</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1536827099784</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -322,14 +336,16 @@
     <MESSAGE value="[chore] cleanup and try/except" />
     <MESSAGE value="[fix] bsuir shcedule command" />
     <MESSAGE value="[fix] todat/tomorrow schedule" />
-    <option name="LAST_COMMIT_MESSAGE" value="[fix] todat/tomorrow schedule" />
+    <MESSAGE value="[fix] fix message condition in /bsuir" />
+    <MESSAGE value="[fix] exit to main menu" />
+    <option name="LAST_COMMIT_MESSAGE" value="[fix] exit to main menu" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/utils.py" />
     <entry file="file://$PROJECT_DIR$/bot.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="190" column="52" selection-start-line="190" selection-start-column="52" selection-end-line="190" selection-end-column="52" />
+        <state relative-caret-position="450">
+          <caret line="219" column="57" selection-start-line="219" selection-start-column="57" selection-end-line="219" selection-end-column="57" />
           <folding>
             <element signature="e#15#29#0" expanded="true" />
           </folding>
