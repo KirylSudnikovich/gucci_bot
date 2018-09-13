@@ -176,6 +176,8 @@ def GetExams(message):
 
 @bot.message_handler(commands=['bsuir'])
 def getSchedule(message):
+    if message.text == "Назад":
+        bot.send_message(message.chat.id, 'Возвращаемся в главное меню', reply_markup=types.ReplyKeyboardRemove())
     s = ""
     ourUser = db.session.query(User).filter_by(username=str(message.from_user.first_name)).first()
     if ourUser:
@@ -288,7 +290,7 @@ def checkRasp(message):
 
 def name1(message):
     if message.text != 'Академическая (в сторону Ангарской)' and message.text != 'Кольцевая дорога' and \
-                    message.text != 'Профтехколледж' and message.text != 'Дом печати (в сторону ст.м. Пушкинская)':
+            message.text != 'Профтехколледж' and message.text != 'Дом печати (в сторону ст.м. Пушкинская)':
         bot.send_message(message.chat.id, 'Ебать ты долбаеб, я не могу. Название нормально введи блять.',
                          reply_markup=types.ReplyKeyboardRemove())
         return
@@ -703,6 +705,7 @@ def NoCoolBot(message):
         if file == 'serega_evil.jpg':
             bot.send_photo(message.chat.id, "AgADAgADWqgxG0hVkEh--aRmsJVMlX3PDw4ABA7xVjUWQnZY9BYDAAEC", None)
     bot.send_message(message.chat.id, 'Are you ohuel tam?')
+
 
 @bot.message_handler(
     func=lambda msg: msg.text == 'бот, где можно провести каникулы?' or msg.text == 'Бот, где можно провести каникулы?')
